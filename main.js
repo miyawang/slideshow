@@ -7,20 +7,8 @@ setInterval(()=>{
     makeEnter($(e.currentTarget))
   })
   console.log(n);
-  // makeLeave($(`.images > img:nth-child(${x(n)})`))  // 函数那边如果不传回node  这里返回undefined
-  // .one('transitionend',(e)=>{
-  //   makeEnter($(e.currentTarget))
-  // })
-  // $(`.images > img:nth-child(${x(n)})`).removeClass('current').addClass('leave')
-  // .one('transitionend',(e)=>{
-  //   $(e.currentTarget).removeClass('leave').addClass('enter')
-  // })
-  // makeCurrent($(`.images > img:nth-child(${x(n+1)}`))
   makeCurrent(getImage(n+1));
-  // $(`.images > img:nth-child(${x(n+1)}`).removeClass('enter').addClass('current');
   n = n+1;
-  // console.log(n);
-  
 },3000)
 
 function getImage(n){
@@ -36,8 +24,6 @@ function x(n){
   }
   return n;
 }
-
-
 function init(){
    var n = 1;
   $(`.images > img:nth-child(${n})`).addClass('current')
@@ -54,14 +40,6 @@ function makeLeave($node){
 function makeEnter($node){
   $node.removeClass('current leave').addClass('enter')
 }
-// setTimeout(()=>{
-//   $('.images > img:nth-child(1)').removeClass('current').addClass('leave')
-//   .one('transitionend',(e)=>{
-//     $(e.currentTarget).removeClass('leave').addClass('enter')
-//   })
-//   $('.images > img:nth-child(2)').removeClass('enter').addClass('current');
-// },3000)
-
 // setTimeout(()=>{
 //   $('.images > img:nth-child(2)').removeClass('current').addClass('leave')
 //   .one('transitionend',(e)=>{
